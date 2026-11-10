@@ -1,0 +1,14 @@
+[Unit]
+Description=Notes Flask API
+After=network-online.target
+Wants=network-online.target
+
+[Service]
+DynamicUser=yes
+WorkingDirectory=/opt/notes-api
+LoadCredential=pgpass:/etc/notes-api/pgpass
+ExecStart=/usr/bin/gunicorn --bind 127.0.0.1:8000 app:app
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target

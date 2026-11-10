@@ -1,0 +1,8 @@
+.env
+.env.*
+pgpass
+.pgpass
+*.pem
+*.key
+__pycache__/
+.DS_Store
